@@ -1,11 +1,21 @@
 const assert = require('chai').assert;
-const {check, prepInput} = require("../lun")
+const {check, prepInput, getCheckDigit, getLunSum} = require("../lun")
 describe('check', function () {
   describe("prepInput", () => {
     it("should return an array of digits", () => {
       assert.deepEqual(prepInput(79927398713), [3,1,7,8,9,3,7,2,9,9,7])
     })
-  })
+  });
+  describe("getCheckDigit", () => {
+    it("should return the check digit", () => {
+      assert.equal(getCheckDigit([3,1,7,8,9,3,7,2,9,9,7]), 3);
+    })
+  });
+  describe("getLunSum", () => {
+    it("should return the correct sum", () => {
+      assert.equal(getLunSum([1,7,8,9,3,7,2,9,9,7]), 67);
+    })
+  });
   xit('should return a valid check digit', function () {
     assert.equal(check(79927398713), true);
   });
