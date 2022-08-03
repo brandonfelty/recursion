@@ -5,27 +5,26 @@
 // given investment x, how many bottles of pop? 
 
 const redeem = (investment) => {
-  let totalBottles = 0;
-  let fullBottles = 0;
+  let fullBottles = Math.floor(investment / 2);
+  let totalBottles = fullBottles;
   let freeBottles = 0;
   let bottleCaps = 0;
 
-  bottlesPurchased = Math.floor(investment / 2);
-  fullBottles = bottlesPurchased;
-  totalBottles = bottlesPurchased;
-  
   while (fullBottles >= 2) {
     freeBottles = Math.floor(fullBottles / 2);
     totalBottles += freeBottles;
-    fullBottles = totalBottles - (2 * freeBottles);
     bottleCaps += freeBottles * 2;
+    fullBottles -= freeBottles * 2;
+    fullBottles += freeBottles;
+
     if (bottleCaps >= 4) {
-      freeBottles += Math.floor(bottleCaps / 4);
+      freeBottles = Math.floor(bottleCaps / 4);
       totalBottles += freeBottles;
-      bottleCaps -= freeBottles * 4;
+      bottleCaps -= 4 * freeBottles;
       fullBottles += freeBottles;
     }
   }
+
   return totalBottles;
 };
 
