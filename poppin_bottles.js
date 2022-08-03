@@ -11,23 +11,35 @@ const redeem = (investment) => {
   let totalBottles = fullBottles;
   let freeBottles = 0;
   let bottleCaps = 0;
+  let totalFreeBottles = 0;
+  let totalBottleCaps = 0;
 
   while (fullBottles >= 2) {
     freeBottles = Math.floor(fullBottles / 2);
+    totalFreeBottles += freeBottles;
     totalBottles += freeBottles;
     bottleCaps += freeBottles * 2;
+    totalBottleCaps += bottleCaps;
     fullBottles -= freeBottles * 2;
     fullBottles += freeBottles;
 
     if (bottleCaps >= 4) {
       freeBottles = Math.floor(bottleCaps / 4);
+      totalFreeBottles += freeBottles;
       totalBottles += freeBottles;
       bottleCaps -= 4 * freeBottles;
       fullBottles += freeBottles;
     }
   }
 
-  return totalBottles;
+  return (
+    console.log(
+      `TOTAL BOTTLES: ${totalBottles}
+      TOTAL EARNED: 
+        BOTTLES: ${totalFreeBottles} 
+        CAPS: ${totalBottleCaps}
+    `)
+  );
 };
 
 
@@ -38,4 +50,4 @@ const redeem = (investment) => {
 // console.log(redeem(40), ": 75 Total Bottles");
 
 // task 2
-console.log(redeem(investment));
+redeem(investment);
