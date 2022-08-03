@@ -35,6 +35,8 @@ const redeem = (investment) => {
   return (
     console.log(
       `TOTAL BOTTLES: ${totalBottles}
+      REMAINING BOTTLES: ${fullBottles}
+      REMAINING CAPS: ${bottleCaps}
       TOTAL EARNED: 
         BOTTLES: ${totalFreeBottles} 
         CAPS: ${totalBottleCaps}
