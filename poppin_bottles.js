@@ -4,6 +4,8 @@
 
 // given investment x, how many bottles of pop? 
 
+const investment = process.argv[2];
+
 const redeem = (investment) => {
   let fullBottles = Math.floor(investment / 2);
   let totalBottles = fullBottles;
@@ -30,7 +32,10 @@ const redeem = (investment) => {
 
 
 // task 1
-console.log(redeem(10), ": 15 Total Bottles");
-console.log(redeem(20), ": 35 Total Bottles");
-console.log(redeem(30), ": 55 Total Bottles");
-console.log(redeem(40), ": 75 Total Bottles");
+// console.log(redeem(10), ": 15 Total Bottles");
+// console.log(redeem(20), ": 35 Total Bottles");
+// console.log(redeem(30), ": 55 Total Bottles");
+// console.log(redeem(40), ": 75 Total Bottles");
+
+// task 2
+console.log(redeem(investment));
