@@ -19,13 +19,12 @@ const redeem = (investment) => {
     totalFreeBottles += freeBottles;
     totalBottles += freeBottles;
     bottleCaps += freeBottles * 2;
-    totalBottleCaps += bottleCaps;
     fullBottles -= freeBottles * 2;
     fullBottles += freeBottles;
 
     if (bottleCaps >= 4) {
       freeBottles = Math.floor(bottleCaps / 4);
-      totalFreeBottles += freeBottles;
+      totalBottleCaps += freeBottles;
       totalBottles += freeBottles;
       bottleCaps -= 4 * freeBottles;
       fullBottles += freeBottles;
